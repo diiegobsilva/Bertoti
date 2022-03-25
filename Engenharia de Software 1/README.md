@@ -23,12 +23,12 @@
       <img src = "https://github.com/diiegobsilva/Bertoti/blob/main/Engenharia%20de%20Software%201/Atividade%20Heuristica-2.png" >
   </p>
   
-  
+ <hr/> 
   
 <h1 align="center">Diagrama de Classe</h1>
   <p align="center">
       <img src = "https://github.com/diiegobsilva/Bertoti/blob/main/Engenharia%20de%20Software%201/diagrama%20de%20classe.png" >
   </p>
-  
+   <hr/> 
   
   
