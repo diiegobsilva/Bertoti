@@ -1,0 +1,53 @@
+CREATE DATABASE registro_api;
+USE registro_api;
+
+CREATE TABLE Projeto (
+	id_projeto INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nome_empresa CHAR(50),
+	nome_projeto CHAR(50)
+	);
+
+CREATE TABLE Cadastro (
+	id_cadastro INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	cargo CHAR(50),
+	nome CHAR(50),
+	email CHAR(50),
+	nome_empresa CHAR(50),
+	projetos CHAR(50),
+	whatsapp CHAR(11)   
+	);
+
+CREATE TABLE Mensagem (
+	id_mensagem INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	conteudo MEDIUMTEXT,
+	titulo TINYTEXT,
+	categoria TINYTEXT
+	);
+
+
+CREATE TABLE Empresa (
+	id_empresa INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nome_empresa CHAR(50),
+	nome_projeto CHAR(50)
+	);
+
+CREATE TABLE projeto_usuario (
+	id_projeto INT NOT NULL,
+	id_cadastro INT NOT NULL,
+	FOREIGN KEY(id_projeto) REFERENCES Projeto (id_projeto),
+	FOREIGN KEY(id_cadastro) REFERENCES Cadastro (id_cadastro)
+	);
+
+CREATE TABLE usuario_empresa (
+	id_cadastro INT NOT NULL,
+	id_empresa INT NOT NULL,
+	FOREIGN KEY(id_cadastro) REFERENCES Cadastro (id_cadastro),
+	FOREIGN KEY(id_empresa) REFERENCES Empresa (id_empresa)
+	);
+
+CREATE TABLE user_message (
+	id_mensagem INT NOT NULL,
+	id_cadastro INT NOT NULL,
+	FOREIGN KEY(id_cadastro) REFERENCES Cadastro (id_cadastro),
+	FOREIGN KEY(id_mensagem) REFERENCES Mensagem (id_mensagem)
+	);
