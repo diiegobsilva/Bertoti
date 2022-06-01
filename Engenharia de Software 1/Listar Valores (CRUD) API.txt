@@ -1,0 +1,25 @@
+    private void listaValores() {
+        try {
+
+            Cadastro_mensagemDAO objCadastro_mensagemDAO = new Cadastro_mensagemDAO();
+
+            DefaultTableModel model = (DefaultTableModel) TabelaMensagem.getModel();
+            model.setNumRows(0);
+
+            ArrayList<Cadastro_mensagem> lista = objCadastro_mensagemDAO.ListarMensagem();
+
+            for (int num = 0; num < lista.size(); num++) {
+                model.addRow(new Object[]{
+                    lista.get(num).getId_mensagem(),
+                    lista.get(num).getCategoria(),
+                    lista.get(num).getMeio_comunicacao(),
+                    lista.get(num).getTitulo(),
+                    lista.get(num).getConteudo()
+                });
+
+            }
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "Listar Valores" + erro);
+        }
+
+    }

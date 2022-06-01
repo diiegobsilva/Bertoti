@@ -1,0 +1,61 @@
+   @FXML
+    void Entrar(ActionEvent event) throws IOException {
+        if (areaEmail.getText().isEmpty() || areaSenha.getText().isEmpty()){
+          invalidDetailsLogin.setStyle(errorMessage);
+          invalidDetailsLogin.setText("Todos os campos são obrigatórios");
+
+          if (areaEmail.getText().isEmpty()){
+              areaEmail.setStyle(errorStyle);
+          }
+          else areaEmail.setStyle(successStyle);
+
+          if (areaSenha.getText().isEmpty()){
+              areaSenha.setStyle(errorStyle);
+          }
+          else areaSenha.setStyle(successStyle);
+
+        }
+        else if (areaSenha.getText().length()<7){
+            areaSenha.setStyle(errorStyle);
+            invalidDetailsLogin.setStyle(errorMessage);
+            invalidDetailsLogin.setText("A senha deve ter no mínimo 8 caracteres");
+        }
+            
+
+        
+        try {
+            invalidDetailsLogin.setText("Tudo certo!");
+            invalidDetailsLogin.setStyle(successMessage);
+            areaEmail.setStyle(successStyle);
+            areaSenha.setStyle(successStyle);
+
+            String Email, Senha;
+            Email = areaEmail.getText();
+            Senha = areaSenha.getText();
+
+            CadastroCliente objCadastroCliente = new CadastroCliente();
+            objCadastroCliente.setEmail(Email);
+            objCadastroCliente.setSenha(Senha);
+
+            CadastroClienteDAO objCadastroClienteDAO = new CadastroClienteDAO();
+            ResultSet rsCadastroClienteDAO = objCadastroClienteDAO.autenticacaoUsuario(objCadastroCliente);
+
+            if (rsCadastroClienteDAO.next()) {
+                //CHAMAR TELA QUE EU QUERO ABRIR.
+
+                viewFactory.TelaInicialSuporte();
+                Stage stage = (Stage) areaEmail.getScene().getWindow();
+                areaSenha.getScene().getWindow();
+                
+                viewFactory.closeStage(stage);
+
+            } else {
+                //ENVIAR MENSAGEM DIZENDO INCORRETO.
+                JOptionPane.showMessageDialog(null, "Usuario ou Senha Inválida");
+
+            }
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "LoginWindowEntrar" + erro);
+        }
+    }

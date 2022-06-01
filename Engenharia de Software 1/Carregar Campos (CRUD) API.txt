@@ -1,0 +1,10 @@
+    private void CarregarCampos() {
+        int setar = TabelaMensagem.getSelectedRow();
+
+        txtId_mensagem.setText(TabelaMensagem.getModel().getValueAt(setar, 0).toString());
+        txtCategoria.setText(TabelaMensagem.getModel().getValueAt(setar, 1).toString());
+        txtTitulo.setText(TabelaMensagem.getModel().getValueAt(setar, 2).toString());
+        txtMeio_Comunicacao.setText(TabelaMensagem.getModel().getValueAt(setar, 3).toString());
+        txtConteudo.setText(TabelaMensagem.getModel().getValueAt(setar, 4).toString());
+
+    }

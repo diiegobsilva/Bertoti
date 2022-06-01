@@ -1,0 +1,21 @@
+    private void AlterarMensagem(){
+        int id_mensagem;
+        String titulo, categoria, conteudo, meio_comunicacao;
+        
+        id_mensagem = Integer.parseInt(txtId_mensagem.getText());
+        titulo = txtTitulo.getText();
+        categoria = txtCategoria.getText();
+        meio_comunicacao = txtMeio_Comunicacao.getText();
+        conteudo = txtConteudo.getText();
+        
+        Cadastro_mensagem objCadastro_mensagem = new Cadastro_mensagem();
+        objCadastro_mensagem.setId_mensagem(id_mensagem);
+        objCadastro_mensagem.setTitulo(titulo);
+        objCadastro_mensagem.setCategoria(categoria);
+        objCadastro_mensagem.setMeio_comunicacao(meio_comunicacao);
+        objCadastro_mensagem.setConteudo(conteudo); 
+        
+        Cadastro_mensagemDAO objCadastro_mensagemDAO = new Cadastro_mensagemDAO();
+        objCadastro_mensagemDAO.alterarMensagem(objCadastro_mensagem);
+        
+    }
