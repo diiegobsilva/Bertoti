@@ -3,10 +3,10 @@
   Nome: Diego Batista da Silva / RA:1460482121034
 <hr/>
 
-<h1 align="center">Diagrama de caso de uso</h1>
-  <h3>Requisitos Funcionais</h3>
+<h1 align="center">WCAG (Quick Reference)</h1>
+  <h3>Pontos Positivos e Negativos</h3>
   <p align="center">
-      <img src = "https://github.com/diiegobsilva/Bertoti/blob/main/Engenharia%20de%20Software%201/Diagrama%20de%20caso%20de%20uso.png" >
+      <img src = "https://github.com/diiegobsilva/Bertoti/blob/main/IHC/WCAG.pdf" >
   </p>
   <hr/>
  <h1 align="center">Atividade Heuristicas</h1>
