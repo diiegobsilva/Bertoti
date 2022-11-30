@@ -20,6 +20,9 @@
       <img src = "https://github.com/diiegobsilva/Bertoti/blob/main/IHC/PontoNegativo.png" >
     </p>
   <hr/>
+    <p align="center">
+      <img src = "https://github.com/diiegobsilva/Bertoti/blob/main/IHC/PontoNegativo.png" >
+    </p>
  
 
   
