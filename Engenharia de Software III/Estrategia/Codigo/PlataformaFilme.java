@@ -6,7 +6,7 @@ public class PlataformaFilme {
 		generoFilme = filme;
 	}
 	
-	public void escolherMusica() {
+	public void escolherFilme() {
 		generoFilme.assistirFilme();
 	}
 }
