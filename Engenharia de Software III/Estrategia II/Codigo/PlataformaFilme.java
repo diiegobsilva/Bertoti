@@ -1,13 +1,13 @@
 package strategy;
 
 public class PlataformaFilme {
-    private GeneroFilme generoFilme;
-   	public void setGenero (GeneroFilme filme) {
-		generoFilme = filme;
+    private GeneroSerie generoSerie;
+   	public void setGenero (GeneroSerie serie) {
+		generoSerie = serie;
 	}
 	
-	public void escolherMusica() {
-		generoFilme.assistirFilme();
+	public void escolherFilme() {
+		generoSerie.assistirSerie();
 	}
 }
 

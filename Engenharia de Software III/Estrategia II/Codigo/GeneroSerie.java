@@ -1,5 +1,5 @@
 package strategy;
 
 public interface GeneroSerie {
-	public void assistirFilme();
+	public void assistirSerie();
 }
