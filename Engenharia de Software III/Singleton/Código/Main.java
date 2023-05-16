@@ -5,18 +5,20 @@ package singleton;
  */
 public class Main {
         public static void main(String[] args) {
-            Canal CanalDoDiego = Canal.getInstance("Canal do Diego");
-            Inscrito inscrito1 = new Inscrito("Ana");
-            Inscrito inscrito2 = new Inscrito("Danilo");
-            Inscrito inscrito3 = new Inscrito("Mateus");
-            Inscrito inscrito4 = new Inscrito("Agenor");
-
-            CanalDoDiego.registrarInscrito(inscrito1);
-            CanalDoDiego.registrarInscrito(inscrito2);
-            CanalDoDiego.registrarInscrito(inscrito3);
-            CanalDoDiego.registrarInscrito(inscrito4);
-
-            CanalDoDiego.postVideo("Como jogar CS", "Nesse vídeo vc vai aprender a como jogar Cs de vez");
+            Brasil brasil = Brasil.INSTACE;
+            Brasil brasil2 = Brasil.INSTACE;
+            brasil.setPopulation(100);
+            System.out.println(brasil + " population: " + brasil.getPopulation() + " " + brasil.getUnit());
+            System.out.println(brasil2 + " population: " + brasil.getPopulation() + " " + brasil.getUnit());    
+            
+            
+            System.out.println("------------------------------------------------------------------------");
+            
+            Argentina argentina = Argentina.getInstance();
+            Argentina argentina2 = Argentina.getInstance();
+             argentina.setPopulation(500);
+            System.out.println(argentina + " population: " + argentina.getPopulation() + " " + argentina.getUnit());
+            System.out.println(argentina2 + " population: " + argentina2.getPopulation() + " " + argentina2.getUnit());
     }
 }
 
