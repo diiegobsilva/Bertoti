@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.combing;
+package com.mycompany.combing2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,26 +11,40 @@ import java.util.List;
  *
  * @author diego
  */
-class AgenciaBancaria extends ComponenteBanco {
-    private List<ComponenteBanco> componentes;
+class AgenciaBancaria {
+    private String nome;
+    private List<AgenciaBancaria> agencias;
+    private List<String> funcionarios;
 
     public AgenciaBancaria(String nome) {
-        super(nome);
-        this.componentes = new ArrayList<>();
+        this.nome = nome;
+        this.agencias = new ArrayList<>();
+        this.funcionarios = new ArrayList<>();
     }
 
-    public void adicionar(ComponenteBanco componente) {
-        componentes.add(componente);
+    public void adicionarAgencia(AgenciaBancaria agencia) {
+        agencias.add(agencia);
     }
 
-    public void remover(ComponenteBanco componente) {
-        componentes.remove(componente);
+    public void removerAgencia(AgenciaBancaria agencia) {
+        agencias.remove(agencia);
     }
 
-    public void exibir(int nivel) {
-        System.out.println("-".repeat(nivel) + " " + nome);
-        for (ComponenteBanco componente : componentes) {
-            componente.exibir(nivel + 1);
+    public void adicionarFuncionario(String funcionario) {
+        funcionarios.add(funcionario);
+    }
+
+    public void removerFuncionario(String funcionario) {
+        funcionarios.remove(funcionario);
+    }
+
+    public void exibir() {
+        System.out.println("Agência: " + nome);
+        for (AgenciaBancaria agencia : agencias) {
+            agencia.exibir();
+        }
+        for (String funcionario : funcionarios) {
+            System.out.println("Funcionário: " + funcionario);
         }
     }
 }

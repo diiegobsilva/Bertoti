@@ -1,5 +1,13 @@
-package com.mycompany.combing;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
 
+package com.mycompany.combing2;
+
+/**
+ *
+ * @author diego
+ */
 public class Main {
     public static void main(String[] args) {
         // Criação das estratégias de juros
@@ -7,7 +15,7 @@ public class Main {
         EstrategiaJuros jurosCompostos = new EstrategiaJurosCompostos(0.1, 12);
 
         // Criação da conta e associação com os observadores
-        Conta conta = new Conta();
+        ContaBancaria conta = new ContaBancaria();
         Observador impressoraExtrato = new ImpressoraExtratoBancario();
         conta.adicionarObservador(impressoraExtrato);
 
@@ -17,10 +25,8 @@ public class Main {
 
         // Criação da agência bancária e adição de funcionários
         AgenciaBancaria agencia = new AgenciaBancaria("Agência Principal");
-        ComponenteBanco funcionario1 = new FuncionarioBanco("Diego");
-        ComponenteBanco funcionario2 = new FuncionarioBanco("Danilo");
-        agencia.adicionar(funcionario1);
-        agencia.adicionar(funcionario2);
+        agencia.adicionarFuncionario("Diego");
+        agencia.adicionarFuncionario("Danilo");
 
         // Criação do singleton do banco e adição da agência
         Banco banco = Banco.getInstance();

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.combing;
+package com.mycompany.combing2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ class Banco {
 
     public void exibirAgencias() {
         for (AgenciaBancaria agencia : agencias) {
-            agencia.exibir(0);
+            agencia.exibir();
         }
     }
 }

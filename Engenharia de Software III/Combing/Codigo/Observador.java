@@ -1,5 +1,9 @@
-package com.mycompany.combing;
+package com.mycompany.combing2;
 
-public interface Observador {
-    void atualizar(Conta conta);
+/**
+ *
+ * @author diego
+ */
+interface Observador {
+    void atualizar(double saldo);
 }

@@ -1,13 +1,21 @@
-package com.mycompany.combing;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.combing2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Conta implements Observavel {
+/**
+ *
+ * @author diego
+ */
+class ContaBancaria {
     private double saldo;
     private List<Observador> observadores;
 
-    public Conta() {
+    public ContaBancaria() {
         this.saldo = 0;
         this.observadores = new ArrayList<>();
     }
@@ -40,7 +48,7 @@ class Conta implements Observavel {
 
     public void notificarObservadores() {
         for (Observador observador : observadores) {
-            observador.atualizar(this);
+            observador.atualizar(saldo);
         }
     }
 }
