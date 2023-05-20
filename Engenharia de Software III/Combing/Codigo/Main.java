@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.combing2;
+
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -34,5 +32,11 @@ public class Main {
 
         // Exibição das agências do banco
         banco.exibirAgencias();
+        
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new BancoView();
+            }
+        });
     }
 }
