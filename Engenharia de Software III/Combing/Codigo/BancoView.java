@@ -50,6 +50,12 @@ public class BancoView extends JFrame {
         });
 
         // Adição dos componentes à janela
+                // Estilização dos botões
+        depositarButton.setBackground(Color.GREEN);
+        depositarButton.setForeground(Color.WHITE);
+        sacarButton.setBackground(Color.RED);
+        sacarButton.setForeground(Color.WHITE);
+        
         add(saldoLabel);
         add(depositarButton);
         add(sacarButton);
