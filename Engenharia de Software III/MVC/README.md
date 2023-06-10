@@ -1,5 +1,5 @@
 # Bertoti
-  <p align="center">]
+  <p align="center">
   1) Classe ContaBancaria:
   A classe ContaBancaria representa uma conta bancária com um número de conta e um saldo. Ela possui métodos para depositar e sacar dinheiro da conta, além de gerenciar uma lista de observadores. Quando ocorre uma operação de depósito ou saque, a classe notifica todos os observadores registrados sobre a mudança no saldo.
 
