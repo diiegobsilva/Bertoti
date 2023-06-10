@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.combing2;
+package com.mycompany.mvc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +11,19 @@ import java.util.List;
  *
  * @author diego
  */
-class ContaBancaria {
+public class ContaBancaria {
+    private String numeroConta;
     private double saldo;
     private List<Observador> observadores;
 
-    public ContaBancaria() {
-        this.saldo = 0;
+    public ContaBancaria(String numeroConta, double saldo) {
+        this.numeroConta = numeroConta;
+        this.saldo = saldo;
         this.observadores = new ArrayList<>();
+    }
+
+    public String getNumeroConta() {
+        return numeroConta;
     }
 
     public double getSaldo() {
@@ -26,15 +32,17 @@ class ContaBancaria {
 
     public void depositar(double valor) {
         saldo += valor;
+        System.out.println("Depósito realizado. Novo saldo: " + saldo);
         notificarObservadores();
     }
 
     public void sacar(double valor) {
         if (valor <= saldo) {
             saldo -= valor;
+            System.out.println("Saque realizado. Novo saldo: " + saldo);
             notificarObservadores();
         } else {
-            System.out.println("Saldo insuficiente");
+            System.out.println("Saldo insuficiente para realizar o saque.");
         }
     }
 
@@ -46,7 +54,7 @@ class ContaBancaria {
         observadores.remove(observador);
     }
 
-    public void notificarObservadores() {
+    private void notificarObservadores() {
         for (Observador observador : observadores) {
             observador.atualizar(saldo);
         }
