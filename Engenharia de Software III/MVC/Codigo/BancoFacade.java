@@ -10,11 +10,11 @@ package com.mycompany.mvc;
  */
 public class BancoFacade {
     private ContaBancaria conta;
-    private NotificacaoSaldo notificacaoSaldo;
+    private View notificacaoSaldo;
 
     public BancoFacade(String numeroConta, double saldo) {
         conta = new ContaBancaria(numeroConta, saldo);
-        notificacaoSaldo = new NotificacaoSaldo(conta);
+        notificacaoSaldo = new View(conta);
     }
 
     public void depositar(double valor) {

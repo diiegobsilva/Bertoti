@@ -10,10 +10,23 @@ package com.mycompany.mvc;
  */
 import java.util.Scanner;
 
-public class View {
+public class View implements Observador{
+    private ContaBancaria conta;
     private BancoFacade banco;
     private Scanner scanner;
+    
+    public View(ContaBancaria conta) {
+        this.conta = conta;
+        conta.adicionarObservador(this);
+    }
 
+    @Override
+    public void atualizar(double saldo) {
+        System.out.println("Saldo atualizado: " + saldo);
+    }
+
+    
+    
     public View() {
         banco = new BancoFacade("123456", 1000.0);
         scanner = new Scanner(System.in);
